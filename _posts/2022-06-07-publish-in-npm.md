@@ -215,8 +215,14 @@ Avant de passer à l'étape de publication, vous devriez vous retrouver avec l'e
 
 ![]({{ site.baseurl }}/images/04.png)
 
-<!-- 
 
 # Publier mon composant inputsur la plateforme NPM 
 Afin de publier votre nouveau composant sur NPM, il est nécessaire de créer un compte au préalable sur la [plateforme](https://www.npmjs.com).
- -->
+
+
+Une fois votre compte créé, vous devez vous connecter à votre compte NPM à partir de votre terminal en tapant la commande suivante : 
+
+```bash
+$ npm login 
+```
+
