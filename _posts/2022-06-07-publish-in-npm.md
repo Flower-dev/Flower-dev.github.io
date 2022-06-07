@@ -47,7 +47,7 @@ Input.defaultProps = {
     min: '0'
 }
 
-export default function Input({ type, name, placeholder, onChange, required, min }) {
+export function Input({ type, name, placeholder, onChange, required, min }) {
     
     const [initialValue, setInitialValue] = useState('');
 
@@ -115,6 +115,8 @@ dans
     "react-dom": "^18.1.0"
 },
 ```
+
+Cela permet d'éviter les conflits de DOM entre le composant React et le projet React dans lequel il sera importé par la suite.
 
 Vous devez vous retrouvez avec le fichier suivant : 
 
@@ -225,4 +227,95 @@ Une fois votre compte créé, vous devez vous connecter à votre compte NPM à p
 ```bash
 $ npm login 
 ```
+
+Dans votre fichier `package.json` supprimez la ligne `"private:" true` et lancer la commande 
+
+```bash
+$ npm init
+```
+
+pour mettre à jour votre manifeste avec l'ensemble des informations nécessaires au bon fonctionnement de votre composant. vous devriez avoir ceci (voir le code ci-dessous) dans votre fichier `package.json`
+
+```json
+{
+  "name": "input_plugin",
+  "version": "0.1.2",
+  "peerDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flower-dev/input_plugin.git"
+  },
+  "author": "flowerdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flower-dev/input_plugin/issues"
+  },
+  "homepage": "https://github.com/Flower-dev/input_plugin#readme"
+}
+
+```
+
+Enfin, lancer la commande suivante dans votre terminal
+
+```bash
+$ npm publish
+```
+afin de publier votre composant sur NPM 
+
+⚠️  Attention, le nom de votre composant doit être unique et le registre NPM est sensible à la casse, si jamais votre paquet rentre en conflit avec un paquet déjà existant, votre terminal vous renverra l'erreur suivante :
+
+```bash
+403 Forbidden - PUT https://registry.npmjs.org/[package] - You do not have permission to publish "[package]". Are you logged in as the correct user?
+```
+
+vous devez donc changer le nom du plugin que vous êtes en train de créer dans le manifeste pour évider un éventuel conflit 😉
+
+Une fois publié sur NPM, votre composant est prêt à être utilisé !!!
+
+
+Vous pouvez retrouver la codeBase du projet en cliquant [ici](https://github.com/Flower-dev/input_plugin)
 
