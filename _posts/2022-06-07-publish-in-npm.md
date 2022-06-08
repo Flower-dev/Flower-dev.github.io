@@ -130,7 +130,7 @@ dans un nouvel objet `peerDependencies` comme ci-dessous :
 "peerDependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
-},
+}
 ```
 
 
@@ -186,9 +186,9 @@ Vous devriez vous retrouver avec le fichier suivant :
 Maintenant, installez Babel en excutant les commandes suivantes : 
 
 
-```bash
-npm install --save-dev @babel/core @babel/cli @babel/preset-env 
-npm install --save @babel/polyfill
+```powershell
+$ npm install --save-dev @babel/core @babel/cli @babel/preset-env 
+$ npm install --save @babel/polyfill
 ```
 
 
@@ -221,21 +221,21 @@ Dans le fichier `package.json` remplacez la ligne
 
 
 ```json
-"build": "react-scripts build",
+"build": "react-scripts build"
 ``` 
 
 par ce qui suit : 
 
 
 ```json
-"build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+"build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
 ```
 
 et lancer la commande 
 
 
-```bash
-npm run build
+```powershell
+$ npm run build
 ```
 
 
@@ -253,7 +253,7 @@ Afin de publier votre nouveau composant sur NPM, il est nécessaire d'avoir un c
 Une fois votre compte créé, vous devez vous y connecterà partir de votre terminal en tapant la commande suivante : 
 
 
-```bash
+```powershell
 $ npm login 
 ```
 
@@ -261,7 +261,7 @@ $ npm login
 Dans votre fichier `package.json` supprimez la ligne `"private:" true` et lancer la commande 
 
 
-```bash
+```powershell
 $ npm init
 ```
 
@@ -269,7 +269,7 @@ $ npm init
 pour mettre à jour votre manifeste avec l'ensemble des informations nécessaires au bon fonctionnement de votre composant. Enfin, lancer la commande suivante dans votre terminal
 
 
-```bash
+```powershell
 $ npm publish
 ```
 
@@ -279,7 +279,7 @@ afin de publier votre composant sur NPM
 ⚠️  Attention, le nom de votre composant doit être unique et le registre NPM est sensible à la casse, si jamais votre paquet rentre en conflit avec un paquet déjà existant, votre terminal vous renverra l'erreur suivante :
 
 
-```bash
+```powershell
 403 Forbidden - PUT https://registry.npmjs.org/[package] - You do not have permission to publish "[package]". Are you logged in as the correct user?
 ```
 
