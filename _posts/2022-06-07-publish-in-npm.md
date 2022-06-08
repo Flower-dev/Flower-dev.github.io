@@ -3,30 +3,34 @@ layout: post
 title:  "Publier un composant React JS sur NPM"
 date:   2022-06-07 18:05:55 +0300
 image:  02.jpg
-tags:   Dev
+tags:   NPM
 ---
 
-Envie de créer un composant réutilisable en React JS et de le publier sur NPM ? Je vous explique comment faire tout ça en créant un composant input assez simple 😉
+Envie de créer un composant réutilisable en React JS et de le publier sur NPM ? Je vous explique comment faire tout cela en créant un composant input assez simple 😉
 
-# Créer mon premier composant input réutilisable React JS
+# Créer un composant Input réutilisable avec React JS & le publier sur NPM
 
-## Etape 1 : Création nouveau repository Github et création d'un nouveau projet React
+## Etape 1 : Création d'un nouveau repository Github & installation d'un nouveau projet React
 
-Première étape de ce tuto, commencez par créer un nouveau repository Github et cloné afin de pouvoir l'utiliser. 
+Première étape de ce tuto, commencez par créer un nouveau repository Github et clonez le afin de pouvoir l'utiliser. 
 
-Une fois le repository cloné sur votre ordinateur, vous pouvez créer un nouveau projet React en lançant la commande suivante : 
-```bash
-npx create-react-app input_plugin
+Une fois cette étape réalisée, vous pouvez créer un nouveau projet React en lançant la commande suivante :
+
+```powershell
+$ npx create-react-app input_plugin
 ```
 
 
 ## Etape 2 : Création du composant input 
 
-Dans le dossier `src`, supprimez tous les fichiers déjà existant et créer un nouveau nouveau dossier `lib`
+
+Pour commencer, supprimez tous les fichiers du dossier `src` et remplacez les par un nouveau dossier `lib` dans lequel vous mettrez l'ensemble des fichiers relatif au composant Input. Vous devriez avoir cela dans votre IDE.
+
 
 ![]({{ site.baseurl }}/images/03.png)
 
-Dans ce nouveau dossier `lib`, créez un nouveau fichier `Input.js` dans lequel vous pouvez écrire le code suivant : 
+
+Dans ce nouveau dossier franchement créé, ajoutez un fichier `Input.js` dans lequel vous pouvez écrire le code suivant : 
 
 
 ```js
@@ -69,7 +73,7 @@ export function Input({ type, name, placeholder, onChange, required, min }) {
 }
 ```
 
-Une fois le composant input créé, vous pouvez lui ajouter du style en ajoutant un fichier `input.css` avec le code suivant : 
+Vous pouvez lui ajouter du style en créant un  nouveau fichier `input.css` avec le code suivant : 
 
 ```css
 .inputcustom {
@@ -82,7 +86,7 @@ Une fois le composant input créé, vous pouvez lui ajouter du style en ajoutant
 }
 ```
 
-et l'importer dans `input.js` 
+et l'importer dans le fichier `Input.js` 
 
 ```js
 import './input.css';
@@ -94,9 +98,11 @@ Pour terminer avec le dossier `lib`, créez un dernier fichier `index.js` dans l
 export {Input} from './Input';
 ```
 
+Cela vous permettra d'utiliser votre composant le moment venu. 😉
+
 ## Etape 3 : Mise à jour du fichier package.json et gestion des dépendances
 
-Dans le fichier `package.json`, commencez par déplacer les dépendances 
+Dans le fichier `package.json`, commencez par déplacer les dépendances se trouvant dans `dependencies`
 
 ```json
 "dependencies": {
@@ -107,7 +113,7 @@ Dans le fichier `package.json`, commencez par déplacer les dépendances
 }
 ```
 
-dans 
+dans un nouvel objet `peerDependencies` comme ci-dessous : 
 
 ```json
 "peerDependencies": {
@@ -116,9 +122,9 @@ dans
 },
 ```
 
-Cela permet d'éviter les conflits de DOM entre le composant React et le projet React dans lequel il sera importé par la suite.
+Cela permet d'éviter les conflits de DOM entre le composant React que vous êtes en train de créer et le projet React dans lequel il sera importé par la suite.
 
-Vous devez vous retrouvez avec le fichier suivant : 
+Vous devriez vous retrouver avec le fichier suivant : 
 
 ```json
 {
