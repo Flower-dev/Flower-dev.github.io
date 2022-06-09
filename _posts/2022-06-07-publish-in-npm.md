@@ -8,7 +8,14 @@ tags:   NPM
 
 Envie de créer un composant réutilisable en React JS et de le publier sur NPM ? Je vous explique comment faire tout cela 😉
 
-# Publier mon composant input sur la plateforme NPM 
+
+
+
+
+
+
+
+# Publier un module sur la plateforme NPM 
 Afin de publier un module sur NPM, il est nécessaire d'avoir un compte NPM, si vous n'en avez pas, vous pouvez vous en créer un directement sur la [plateforme](https://www.npmjs.com).
 
 
