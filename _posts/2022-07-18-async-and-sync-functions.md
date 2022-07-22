@@ -1,10 +1,10 @@
-<!-- ---
+---
 layout: post
 title:  "La différence entre une fonction synchrone et une fonction asynchrone en JavaScript"
-date:   2022-07-18 18:05:55 +0300
+date:   2022-07-22 18:05:55 +0300
 image:  05.jpg
 tags:   JavaScript
---- -->
+---
 
 Par défaut, une fonction JavaScript est une fonction dite **synchrone**. C'est à dire que lorsque cette fonction est appelée : 
 - cette dernière exécute **immédiatement** l'intégralité des instructions qui la compose avant de retourner une valeur. 
@@ -66,18 +66,47 @@ La fonction `fetch()` tout comme la fonction `axios()`sont deux exemples de fonc
 
 
 ```JS
-fetch(url)
-  .then(function(data) {
-        // ajouter le contenu de la fonction
-    })
-  })
-  .catch(function(error) {
-        // ajouter le contenu de la fonction
-  });
+function example(url){
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=> {
+        console.log(data);
+    }).catch((e)=> {
+        console.log(error)
+    });
+}
 ```
 Décortiquons un peu le code ci-dessus. La méthode fetch() retourne une promesse ou Promise en anglais. 
 
 Si la promesse renvoyée est resolve, ou résolue, cela signifie que la fonction dans la méthode `then()` a bien été exécutée. 
 Dans le cas où une erreur se produirait pour une raison ou autre, la fonction renverra une promesse reject, rejetée en français. Lors d'une erreur c'est le code se trouvant dans la méthode `catch()` qui sera exécuté.
 
-Pour résumer, une promesse est une sorte de callback générique pour le retours de fonctions asynchrones. C'est l'équivalent d'une fonction avec seulement deux possibilité de sortie : Le succès (resolve), ou l'échec (reject).
+Pour résumer, une promesse est une sorte de callback générique pour le retours de fonctions asynchrones. C'est l'équivalent d'une fonction avec seulement deux possibilités de sortie : Le succès (resolve), ou l'échec (reject).
+
+Pour terminer, je vais aborder la question de l'utilisation de `async` et `await` afin d'écrire du code asynchrone ressemblant à du code synchrone.
+Reprenons le code ci-dessus et modifions le afin d'utiliser `async` et `await`
+
+```JS
+async function(url){
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+    } catch(e){
+        console.log(error);
+    }
+}
+```
+Décortiquons ensemble le code ci-dessus. `async` permet de spécifier que la fonction appelée aura un fonctionnement asynchrone. En ajoutant cette spécification, on force la fonction à retourner une Promise et ce peu importe au contenu de la fonction. `async` permet de capture une Promise en cours de traitement, de bloquer l'exécution en attendant la résolution de cette dernière. Une fois résolue, la valeur reçue sera retournée, cette dernière pourra ou non être stockée et l'exécution pourra continuer. Si la Promise est rejetée, l'erreur sera envoyée au prochain bloc contenu dans la partie `catch`.
+De son côté, `await` permet de passer d'un fonctionnement asynchrone à un fonctionnement synchrone.
+
+
+
+
+
+
+
+
+
+
+
