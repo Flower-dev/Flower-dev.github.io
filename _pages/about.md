@@ -5,11 +5,15 @@ permalink: /about/
 # image: 01.png
 ---
 
-Hi, moi c'est Flower ! Je suis une jeune développeuse Front-End React JS. 
+Hi, moi c'est Flower développeuse Front-end React 👋
 
-J'aime partager et échanger sur différents sujets tech ou non. Dans ce blog vous trouverez différents articles qui seront les résumés de ma veille et de mes réflexions. 
+Après des études dans la gestion des arts et de la culture et des postes de chargée de communication entre autres, j'ai souhaité comprendre le fonctionnement des CMS que j'utilisais.
 
-Je vous souhaite une bonne lecture 📖
+De nature curieuse, mes expériences professionnelles et personnelles m'ont permis de développer un certain nombre de soft-skills tel que l'esprit d'équipe, la polyvalence ou encore la persévérance.
+
+Mes objectifs : faire évoluer et développer mes compétences techniques dans une entreprise bienveillante.
+
+
 
 ***
 <!-- 
