@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "Les principales commandes Git"
+date:   2022-09-26 18:05:55 +0300
+image:  05.jpg
+tags:   Git
+---
+
+Vous trouverez dans ce post, les commandes principales pour utiliser Git 
+
+### Configuration des outils
+
+**Configurer les informations de l'utilisateur pour tous les dépôts locaux**
+
+```bash
+$ git config --global user.name "[nom]" 
+```
+Définit le nom que vous voulez associer à toutes vos opérations de commit
+
+```bash
+$ git config --global user.email "[adresse email]" 
+```
+Définit l'email que vous voulez associer à toutes vos opérations de commit
+
+```bash
+$ git config --global color.ui auto 
+```
+Active la colorisation de la sortie en ligne de commande
+
+### Grouper des changements
+
+**Nommer une série de commits et combiner les résultats de travaux terminés**
+
+```bash
+$ git branch 
+```
+Liste toutes les branches locales dans le dépôt courant
+
+```bash
+$ git branch [nom-de-branche] 
+```
+Crée une nouvelle branche
+
+```bash
+$ git checkout [nom-de-branche] 
+```
+Bascule sur la branche spécifiée et met à jour le répertoire de travail
+
+```bash
+$ git merge [nom-de-branche] 
+```
+Combine dans la branche courante l'historique de la branche spécifiée
+
+```bash
+$ git branch -d [nom-de-branche] 
+````
+Supprime la branche spécifiée
+
+### Changements au niveau des fichiers
+
+**Déplacer et supprimer des fichiers sous suivi de version**
+
+```bash
+$ git rm [fichier]
+```
+Supprime le fichier du répertoire de travail et met à jour l'index
+
+```bash
+$ git rm --cached [fichier]
+``` 
+Supprime le fichier du système de suivi de version mais le préserve localement
+
+```bash
+$ git mv [fichier-nom] [fichier-nouveau-nom]
+``` 
+Renomme le fichier et prépare le changement pour un commit
+
+### Exclure du suivi de gestion
+
+**Exclure des fichiers et chemins temporaires**
+
+```bash
+*.log
+build/
+temp-*
+``` 
+Un fichier texte nommé .gitignore permet d'éviter le suivi de version accidentel pour les fichiers et chemins correspondant aux patterns spécifiés
+
+```bash
+$ git ls-files --other --ignored --exclude-standard 
+```
+Liste tous les fichiers exclus du suivi de version dans ce projet
+
+### Enregistrer des fragments
+
+**Mettre en suspens des modifications non finies pour y revenir plus tard**
+
+```
+$ git stash 
+```
+Enregistre de manière temporaire tous les fichiers sous suivi de version qui ont été modifiés ("remiser son travail")
+
+```bash
+$ git stash pop 
+```
+Applique une remise et la supprime immédiatement
+
+```bash
+$ git stash list 
+```
+Liste toutes les remises
+
+```bash
+$ git stash drop 
+```
+Supprime la remise la plus récente
