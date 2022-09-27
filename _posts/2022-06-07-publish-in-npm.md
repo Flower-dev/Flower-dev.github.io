@@ -2,7 +2,7 @@
 layout: post
 title:  "Publier sur NPM"
 date:   2022-06-07 18:05:55 +0300
-image:  07.jpg
+image:  07.png
 tags:   NPM
 ---
 
