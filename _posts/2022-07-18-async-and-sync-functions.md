@@ -2,7 +2,7 @@
 layout: post
 title:  "La différence entre une fonction synchrone et une fonction asynchrone en JavaScript"
 date:   2022-07-22 18:05:55 +0300
-image:  05.jpg
+image:  08.png
 tags:   JavaScript
 ---
 
