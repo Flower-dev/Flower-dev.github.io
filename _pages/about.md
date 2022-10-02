@@ -5,7 +5,7 @@ permalink: /about/
 # image: 01.png
 ---
 
-Hi, moi c'est Flower développeuse Front-end React 👋
+Hello, moi c'est Flower développeuse Front-end React 👋
 
 Après des études dans la gestion des arts et de la culture et des postes de chargée de communication entre autres, j'ai souhaité comprendre le fonctionnement des CMS que j'utilisais.
 
