@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Les Hooks"
-date:   2023-02-19 18:05:55 +0300
+date:   2023-03-10 18:05:55 +0300
 image:  13.png
-tags:   JS, React
+tags:   JS
 ---
 
 
