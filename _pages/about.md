@@ -10,7 +10,7 @@ Hello, moi c'est Flower développeuse Front-End React 👋
 Avec une expérience de 4 ans en développement de logiciels et d'interfaces web, je m'investis dans l'innovation numérique et artistique. J'ai travaillé sur des produits SaaS, des players et des Design Systems, en collaboration avec des équipes techniques diversifiées dans des environnements Agile.
 
 
-# Mes expériences pro
+# Mes expériences professionnelles
 
 ### Nexton - Lead Dev Front-End Design System
 *5-7 rue Saint Fiacre, 75002 Paris*
@@ -21,6 +21,8 @@ Avec une expérience de 4 ans en développement de logiciels et d'interfaces web
 - Facilitation de l'adoption du Design System
 - Développement des composants provenant des designers
 - Gestion du delivery du produit (définition des priorités, etc.)
+
+
 
 ### Radio France - Développeuse Front-End
 *Maison de la Radio Paris, 75016*
